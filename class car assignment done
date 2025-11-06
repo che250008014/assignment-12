@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+private:
+    string brand;
+    double price;
+
+public:
+    // Parameterized Constructor to initialize brand and price
+    Car(string carBrand, double carPrice) {
+        brand = carBrand;
+        price = carPrice;
+        cout << "A new car object with brand '" << brand << "' has been created.\n";
+    }
+
+    // Member function to display the car details
+    void displayDetails() {
+        cout << "Brand: " << brand << ", Price: $" << price << endl;
+    }
+};
+
+int main() {
+    // Create the first car object using the parameterized constructor
+    cout << "--- Creating Car 1 ---\n";
+    Car car1("Toyota Camry", 25500.00);
+
+    // Create the second car object with different values
+    cout << "\n--- Creating Car 2 ---\n";
+    Car car2("Honda Civic", 22100.00);
+
+    // Display the details of both cars
+    cout << "\n--- Displaying Car Details ---\n";
+    cout << "Details of Car 1: ";
+    car1.displayDetails();
+    cout << "Details of Car 2: ";
+    car2.displayDetails();
+
+    return 0;
+}
