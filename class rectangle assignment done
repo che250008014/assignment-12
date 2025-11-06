@@ -1,0 +1,38 @@
+#include <iostream>
+
+class Rectangle {
+private:
+    double length;
+    double breadth;
+
+public:
+    // Default constructor
+    Rectangle() : length(1.0), breadth(1.0) {
+        std::cout << "Default constructor called. Length and Breadth initialized to 1." << std::endl;
+    }
+
+    // Parameterized constructor
+    Rectangle(double l, double b) : length(l), breadth(b) {
+        std::cout << "Parameterized constructor called. Length and Breadth initialized to user-given values." << std::endl;
+    }
+
+    // Member function to calculate and display the area
+    void calculateAndDisplayArea() {
+        double area = length * breadth;
+        std::cout << "Length: " << length << ", Breadth: " << breadth << ", Area: " << area << std::endl;
+    }
+};
+
+int main() {
+    // Demonstrate the default constructor
+    Rectangle rect1; // Object created using the default constructor
+    rect1.calculateAndDisplayArea();
+
+    std::cout << std::endl; // For better readability in output
+
+    // Demonstrate the parameterized constructor
+    Rectangle rect2(5.0, 10.0); // Object created using the parameterized constructor
+    rect2.calculateAndDisplayArea();
+
+    return 0;
+}
