@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    double length;
+    double breadth;
+    double height;
+
+public:
+    // Constructor (a): Default constructor - all values initialized to 1
+    Box() {
+        length = 1.0;
+        breadth = 1.0;
+        height = 1.0;
+        cout << "Constructor (a) called: All dimensions set to 1.\n";
+    }
+
+    // Constructor (b): One value provided - all dimensions set to that single value (a cube)
+    Box(double value) {
+        length = value;
+        breadth = value;
+        height = value;
+        cout << "Constructor (b) called: All dimensions set to " << value << ".\n";
+    }
+
+    // Constructor (c): Three values provided - sets length, breadth, and height individually
+    Box(double l, double b, double h) {
+        length = l;
+        breadth = b;
+        height = h;
+        cout << "Constructor (c) called: Length=" << length << ", Breadth=" << breadth << ", Height=" << height << ".\n";
+    }
+
+    // Member function to calculate and display the volume
+    void displayVolume() {
+        double volume = length * breadth * height;
+        cout << "Volume of the box is: " << volume << endl;
+    }
+};
+
+int main() {
+    // Case (a): Default constructor (all values 1)
+    cout << "--- Case (a) Default Box ---\n";
+    Box boxA;
+    boxA.displayVolume();
+    cout << "\n";
+
+    // Case (b): One value provided (e.g., 5.0 for a cube)
+    cout << "--- Case (b) Cube Box ---\n";
+    Box boxB(5.0);
+    boxB.displayVolume();
+    cout << "\n";
+
+    // Case (c): Three values provided (e.g., 2.0, 3.0, 4.0)
+    cout << "--- Case (c) Custom Box ---\n";
+    Box boxC(2.0, 3.0, 4.0);
+    boxC.displayVolume();
+    cout << "\n";
+
+    return 0;
+}
+
