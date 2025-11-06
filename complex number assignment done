@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    double real;
+    double imaginary;
+
+public:
+    // 1. Default Constructor: Sets both real and imaginary parts to 0
+    Complex() {
+        real = 0.0;
+        imaginary = 0.0;
+        cout << "Default constructor called.\n";
+    }
+
+    // 2. Constructor for real part only (imaginary defaults to 0)
+    Complex(double r) {
+        real = r;
+        imaginary = 0.0;
+        cout << "Constructor with one parameter called (real part only).\n";
+    }
+
+    // 3. Constructor for both real and imaginary parts
+    Complex(double r, double i) {
+        real = r;
+        imaginary = i;
+        cout << "Constructor with two parameters called (real and imaginary parts).\n";
+    }
+
+    // Member function to display the complex number in 'a + bi' form
+    void display() {
+        cout << real << " + " << imaginary << "i" << endl;
+    }
+};
+
+int main() {
+    // Demonstrate the use of all three constructors
+
+    // Object 1: Using the default constructor (0 + 0i)
+    cout << "--- Object 1 (Default) ---\n";
+    Complex c1;
+    cout << "Complex number c1: ";
+    c1.display();
+    cout << "\n";
+
+    // Object 2: Using the constructor with one parameter (5 + 0i)
+    cout << "--- Object 2 (Real part only) ---\n";
+    Complex c2(5.0);
+    cout << "Complex number c2: ";
+    c2.display();
+    cout << "\n";
+
+    // Object 3: Using the constructor with two parameters (3.5 + 4.2i)
+    cout << "--- Object 3 (Real and Imaginary parts) ---\n";
+    Complex c3(3.5, 4.2);
+    cout << "Complex number c3: ";
+    c3.display();
+    cout << "\n";
+
+    return 0;
+}
